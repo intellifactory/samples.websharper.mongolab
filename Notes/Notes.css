@@ -1,0 +1,89 @@
+* {
+    outline: none;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#header {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-size: x-large;
+    line-height: 48px;
+    margin: 0 16px 0 0;
+    text-transform: uppercase;
+}
+
+button, [type="submit"] {
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0 16px;
+    word-spacing: 8px;
+}
+
+button:active, [type="submit"]:active {
+    transform: scale(0.98);
+}
+
+form {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    color: white;
+    display: none;
+    flex-direction: column;
+    font-family: sans-serif;
+    margin-bottom: 8px;
+    padding: 16px 16px 8px;
+}
+
+form > * {
+    margin: 0 0 8px;
+}
+
+[type="text"], textarea {
+    border: none;
+    padding: 8px;
+    font-family: sans-serif;
+}
+
+[type="submit"] {
+    margin: 0;
+    height: 32px;
+    border-radius: 0;
+}
+
+.visible {
+    display: flex;
+}
+
+.note {
+    background-color: white;
+    border-radius: 4px;
+    font-family: sans-serif;
+    padding: 16px;
+}
+
+.note:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: large;
+    margin: 0;
+}
+
+.note > span {
+    font-size: x-small;
+    text-transform: uppercase;
+}
+
+.note > p {
+    margin: 8px 0 0;
+}
