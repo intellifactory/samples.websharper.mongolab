@@ -54,9 +54,10 @@ module Client =
                 
                 Button [Text "+ New"]
                 |>! OnClick (fun _ _ ->
-                    (JQuery.Of "form").ToggleClass "visible"
+                    (JQuery.Of "#form").ToggleClass "visible"
                     |> ignore
                 )
+                Div [Attr.Class "fix"]
             ]
             Piglet.Return (fun title text -> { Title = title; Date = EcmaScript.Date.Now(); Text = text })
             <*> Piglet.Yield ""
@@ -74,19 +75,19 @@ module Client =
                 |> Async.Start
             )
             |> Piglet.Render (fun x y z ->
-                Form [
-                    Attr.OnSubmit "return false"
-                ] -< [
-                    Label [Text "Title"]
-                    Controls.Input x
+                Div [Id "form"] -< [
+                    Div [Attr.Class "container"] -< [
+                        Label [Text "Title"]
+                        Controls.Input x
                     
-                    Controls.TextArea y -< [
-                        Rows "4"
-                    ]
+                        Controls.TextArea y -< [
+                            Rows "4"
+                        ]
 
-                    Div [
-                        Controls.Submit z -< [
-                            Attr.Value "Save"
+                        Div [
+                            Controls.Submit z -< [
+                                Attr.Value "Save"
+                            ]
                         ]
                     ]
                 ]

@@ -7,16 +7,26 @@ body {
 }
 
 #header {
-    display: flex;
     margin-bottom: 8px;
 }
 
+.fix {
+    clear: left;
+}
+
 h1 {
+    float: left;
     font-family: sans-serif;
     font-size: x-large;
     line-height: 48px;
     margin: 0 16px 0 0;
     text-transform: uppercase;
+}
+
+button {
+    float: left;
+    height: 48px;
+    margin: 0;
 }
 
 button, [type="submit"] {
@@ -32,25 +42,30 @@ button:active, [type="submit"]:active {
     transform: scale(0.98);
 }
 
-form {
+#form {
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 4px;
     color: white;
     display: none;
-    flex-direction: column;
     font-family: sans-serif;
     margin-bottom: 8px;
-    padding: 16px 16px 8px;
+    padding: 16px 0 8px;
 }
 
-form > * {
+.container {
+    margin: 0 16px;
+}
+
+.container > * {
+    display: block;
     margin: 0 0 8px;
 }
 
 [type="text"], textarea {
     border: none;
-    padding: 8px;
     font-family: sans-serif;
+    padding: 8px;
+    width: calc(100% - 16px)
 }
 
 [type="submit"] {
@@ -59,8 +74,8 @@ form > * {
     border-radius: 0;
 }
 
-.visible {
-    display: flex;
+#form.visible {
+    display: block;
 }
 
 .note {
