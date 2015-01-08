@@ -5,10 +5,11 @@ open IntelliFactory.WebSharper
 [<JavaScript>]
 module Client =
     
-    open IntelliFactory.WebSharper.Html
+    open IntelliFactory.WebSharper.Html.Client
     open IntelliFactory.WebSharper.JQuery
     open IntelliFactory.WebSharper.Piglets
     open IntelliFactory.WebSharper.MongoLab
+    open IntelliFactory.WebSharper.JavaScript
 
     type Note =
         {
@@ -27,7 +28,7 @@ module Client =
 
             notes
             |> Array.map (fun note ->
-                let date = EcmaScript.Date note.Date
+                let date = Date note.Date
                 
                 Div [Attr.Class "note"] -< [
                     H2 [Text note.Title]
@@ -39,7 +40,7 @@ module Client =
             )
             |> (-<) (Div [Id "notes"])
             |> fun self ->
-                let wrapper = Dom.Document.Current.GetElementById "wrapper"
+                let wrapper = JS.Document.GetElementById "wrapper"
 
                 wrapper.ReplaceChild(self.Body, wrapper.LastChild) |> ignore
         }
@@ -59,7 +60,7 @@ module Client =
                 )
                 Div [Attr.Class "fix"]
             ]
-            Piglet.Return (fun title text -> { Title = title; Date = EcmaScript.Date.Now(); Text = text })
+            Piglet.Return (fun title text -> { Title = title; Date = Date.Now(); Text = text })
             <*> Piglet.Yield ""
             <*> Piglet.Yield ""
             |> Piglet.WithSubmit
@@ -69,7 +70,7 @@ module Client =
                                   |> Push note
 
                     if result then
-                        JavaScript.Alert "Saved!"
+                        JS.Alert "Saved!"
                         loadNotes ()
                 }
                 |> Async.Start
@@ -97,7 +98,7 @@ module Client =
             ]
         ]
         |> fun self ->
-            let entryPoint : Dom.Element = Dom.Document.Current ? body
+            let entryPoint : Dom.Element = JS.Document ? body
 
             entryPoint.AppendChild self.Body |> ignore
             loadNotes ()
