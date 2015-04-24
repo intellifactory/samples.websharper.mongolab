@@ -1,15 +1,15 @@
 namespace Notes
 
-open IntelliFactory.WebSharper
+open WebSharper
 
 [<JavaScript>]
 module Client =
     
-    open IntelliFactory.WebSharper.Html.Client
-    open IntelliFactory.WebSharper.JQuery
-    open IntelliFactory.WebSharper.Piglets
-    open IntelliFactory.WebSharper.MongoLab
-    open IntelliFactory.WebSharper.JavaScript
+    open WebSharper.Html.Client
+    open WebSharper.JQuery
+    open WebSharper.Piglets
+    open WebSharper.MongoLab
+    open WebSharper.JavaScript
 
     type Note =
         {
