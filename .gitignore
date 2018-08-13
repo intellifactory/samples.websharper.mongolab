@@ -3,3 +3,4 @@ packages/*
 Notes/bin/*
 Notes/Content/*
 Notes/obj/*
+.vs/

@@ -46,7 +46,8 @@ module Client =
         }
         |> Async.Start
 
-    let Main =
+    [<SPAEntryPoint>]
+    let Main() =
         Key := "pS_nPkhL6Co1H2sLRuovMj7rz5XEVMMF"
 
         Div [Id "wrapper"] -< [
