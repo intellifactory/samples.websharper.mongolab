@@ -1,4 +1,4 @@
-# websharper.mongolab [![Build status](https://ci.appveyor.com/api/projects/status/xmbh0x30gyblfkp7?svg=true)](https://ci.appveyor.com/project/Jand42/samples-websharper-mongolab)
+# websharper.mongolab [![Build status](https://ci.appveyor.com/api/projects/status/vhi4drdgckjgq950?svg=true)](https://ci.appveyor.com/project/IntelliFactory/websharper-mongolab-samples)
 
 [Samples][samp] for [WebSharper][ws] bindings for Mongolabs.
 
