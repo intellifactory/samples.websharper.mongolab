@@ -2,5 +2,5 @@
 
 [Samples][samp] for [WebSharper][ws] bindings for Mongolabs.
 
-[samp]: https://dotnet-websharper.github.io/MongoLab
+[samp]: https://websharper-samples.github.io/MongoLab
 [ws]: https://websharper.com/
